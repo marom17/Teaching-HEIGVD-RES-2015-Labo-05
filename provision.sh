@@ -31,3 +31,7 @@ wget -qO- https://get.docker.com/ | sh
 sudo usermod -aG docker vagrant
 
 # Custom installation starts here...
+
+mkdir /vagrant/node-creation
+cd /vagrant/node-creation
+git clone https://github.com/crosbymichael/dockerui
