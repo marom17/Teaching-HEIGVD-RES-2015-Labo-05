@@ -7,4 +7,6 @@ RUN apt-get update --fix-missing
 RUN apt-get install npm -y
 RUN npm install -g pm2@0.12.9
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
+RUN chgrp www-data /usr/local/apache2/conf/httpd.conf
+RUN chmod 644 /usr/local/apache2/conf/httpd.conf
 COPY ./app /home/app

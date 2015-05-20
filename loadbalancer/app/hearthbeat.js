@@ -1,5 +1,7 @@
 /*
-
+* Author: Romain Maillard
+* Date: 20/05/2015
+* But: ce programme envoit régulièrement un paquet contenant quel type de serveur c'est
 */
 var protocol = require('./hearthbeat-protocol');
 
