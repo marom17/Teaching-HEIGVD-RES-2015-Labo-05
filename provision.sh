@@ -34,4 +34,4 @@ sudo usermod -aG docker vagrant
 
 mkdir /vagrant/node-creation
 cd /vagrant/node-creation
-git clone https://github.com/crosbymichael/dockerui
+git clone https://github.com/crosbymichael/dockerui /vagrant/node-creation
