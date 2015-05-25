@@ -16,7 +16,7 @@ COPY ./apache.sh /home/script/apache.sh
 RUN chmod 777 /home/script/apache.sh
 COPY ./mysite /var/www/html
 RUN rm /var/www/html/index.html
-ENTRYPOINT /app/start.sh
+#ENTRYPOINT /app/start.sh
 #COPY ./balancer.conf /etc/apache2/sites-available/balancer.conf
 #RUN a2ensite balancer.conf
 #COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf

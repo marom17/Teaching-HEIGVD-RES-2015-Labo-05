@@ -5,7 +5,7 @@
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $.ajax({url: "demo_test.txt", success: function(result){
+        $.ajax({url: "http://192.168.42.42/api", success: function(result){
             $("#div1").html(result);
         }});
     });
@@ -17,6 +17,12 @@ $(document).ready(function(){
 <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
 
 <button>Get External Content</button>
+<br/>
+<p>Ce service vous est fourni par <b>
+<?php
+echo $_SERVER['SERVER_ADDR'];
+?>
+</b></p>
 
 </body>
 </html>

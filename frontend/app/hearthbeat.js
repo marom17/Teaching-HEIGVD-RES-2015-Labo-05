@@ -1,5 +1,7 @@
 /*
-
+* Author: Romain Maillard
+* Date: 20/05/2015
+* But: ce programme envoit régulièrement un paquet contenant quel type de serveur c'est
 */
 var protocol = require('./hearthbeat-protocol');
 
@@ -13,7 +15,7 @@ function HearthBeat(){
 
 	var that = this;
 	HearthBeat.prototype.update = function() {
-		var payload = JSON.stringify("frontend");
+		var payload = "frontend";
 		message = new Buffer(payload);
 		s.send(message, 0, message.length, protocol.PROTOCOL_PORT, protocol.PROTOCOL_MULTICAST_ADDRESS, function(err, bytes){});
 	}

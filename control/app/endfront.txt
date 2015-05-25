@@ -1,0 +1,5 @@
+		ProxySet stickysession=ROUTEID
+	</Proxy>
+	ProxyPass "/" "balancer://frontend"
+	ProxyPassReverse "/" "balancer://frontend"
+</VirtualHost>

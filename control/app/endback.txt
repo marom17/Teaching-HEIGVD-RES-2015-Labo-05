@@ -1,4 +1,4 @@
 	</Proxy>
-	ProxyPass "/" "balancer://frontend"
 	ProxyPass "/api" "balancer://backend"
+	ProxyPassReverse "/api" "balancer://backend"
 </VirtualHost>
