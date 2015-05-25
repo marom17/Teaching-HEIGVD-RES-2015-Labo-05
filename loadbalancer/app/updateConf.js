@@ -12,11 +12,19 @@ s.bind(protocol.PROTOCOL_PORT, function() {
 
 // This call back is invoked when a new datagram has arrived.
 s.on('message', function(msg, source) {
-	var type=msg;
-	if(type=="frontend"){
-		
-	}
-	else{
-		
-	}
+	var sys=require('sys');
+	var exec=require('child_process').exec;
+	var child;
+	var fs=require('fs');
+	console.log(msg.toString());
+	fs.writeFileSync('/usr/local/apache2/conf/extra/balancer.conf',msg.toString());
+	child=exec('chgrp www-data /usr/local/apache2/conf/extra/balancer.conf');
+	child=exec("/usr/local/apache2/bin/apachectl restart",function (error, stdout, stderr){
+  sys.print('stdout: ' + stdout);
+  sys.print('stderr: ' + stderr);
+  if (error !== null) {
+    console.log('exec error: ' + error);
+  }
+});
+	console.log("Update");
 });
