@@ -1,2 +1,2 @@
-#!bin/bash
-/etc/init.d/apache2 start
+#!/bin/bash
+/usr/local/apache2/bin/apachectl start

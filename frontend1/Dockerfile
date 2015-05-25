@@ -2,7 +2,7 @@ FROM debian:stable
 RUN apt-get update
 #RUN apt-get install vim -y
 RUN apt-get install apache2 -y
-RUN a2enmod proxy && a2enmod proxy_balancer && a2enmod headers
+RUN apt-get install php5-common libapache2-mod-php5 php5-cli -y
 RUN apt-get --purge remove node  -y
 RUN apt-get install nodejs -y
 RUN ln -s /usr/bin/nodejs /usr/bin/node
@@ -14,8 +14,9 @@ COPY ./app /app
 RUN chmod 777 /app/start.sh
 COPY ./apache.sh /home/script/apache.sh
 RUN chmod 777 /home/script/apache.sh
-COPY ./balancer.conf /etc/apache2/sites-available/balancer.conf
-COPY ./apache2.conf /etc/apache2/apache2.conf
-#ENTRYPOINT /app/start.sh
-RUN a2ensite balancer.conf
+COPY ./mysite /var/www/html
+RUN rm /var/www/html/index.html
+ENTRYPOINT /app/start.sh
+#COPY ./balancer.conf /etc/apache2/sites-available/balancer.conf
+#RUN a2ensite balancer.conf
 #COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
