@@ -1,3 +1,4 @@
+		ProxySet lbmethod=byrequests
 		ProxySet stickysession=ROUTEID
 	</Proxy>
 	ProxyPass "/" "balancer://frontend"

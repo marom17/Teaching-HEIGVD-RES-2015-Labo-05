@@ -8,8 +8,6 @@ RUN apt-get install npm -y
 RUN npm install -g pm2@0.12.9
 RUN apt-get install nano -y
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY ./balancerfront.conf /usr/local/apache2/conf/extra/balancerfront.conf
-COPY ./balancerback.conf /usr/local/apache2/conf/extra/balancerback.conf
 COPY ./balancer.conf /usr/local/apache2/conf/extra/balancer.conf
 COPY ./app /app
 COPY ./apache.sh /app/apache.sh

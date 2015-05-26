@@ -1,0 +1,7 @@
+<VirtualHost *:8080>
+	
+	ServerName 192.168.42.42
+	
+	ProxyRequests off
+	
+	<Proxy balancer://backend>

@@ -16,18 +16,8 @@ s.on('message', function(msg, source) {
 	var exec=require('child_process').exec;
 	var child;
 	var fs=require('fs');
-	var json = JSON.parse(msg);
-	console.log(msg.toString());
-	if(json.num==1){
-	fs.writeFileSync('/usr/local/apache2/conf/extra/balancerfront.conf',json.text);
-	child=exec('chgrp www-data /usr/local/apache2/conf/extra/balancerfront.conf');
-	console.log("front");
-	}
-	else{
-	fs.writeFileSync('/usr/local/apache2/conf/extra/balancerback.conf',json.text);
-	child=exec('chgrp www-data /usr/local/apache2/conf/extra/balancerback.conf');
-	console.log("back");
-	}
+	fs.writeFileSync('/usr/local/apache2/conf/extra/balancer.conf',msg.toString());
+	child=exec('chgrp www-data /usr/local/apache2/conf/extra/balancer.conf');
 	child=exec("/usr/local/apache2/bin/apachectl restart",function (error, stdout, stderr){
   sys.print('stdout: ' + stdout);
   sys.print('stderr: ' + stderr);

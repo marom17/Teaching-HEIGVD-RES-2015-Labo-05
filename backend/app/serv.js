@@ -7,8 +7,20 @@ var mot=["la raison du plus fort est toujours la meilleur","Ne t'attends qu'à to
 
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
+  var os = require("os");
+  networkInterfaces = os.networkInterfaces();
+  var i=0;
   var index="Le mot de jours vous est servis par ";
-  //index+=ip.address();
+for (var itf in networkInterfaces) {
+	i++;
+	for (var addressIndex in networkInterfaces[itf]) {
+		var address = networkInterfaces[itf][addressIndex];
+		if(i==2){
+		index+=address.address;
+		break;
+		}
+	}
+}
   index+=" "+mot[i%mot.length];
   i++;
   res.end(index);

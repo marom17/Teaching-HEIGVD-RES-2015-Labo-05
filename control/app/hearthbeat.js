@@ -52,35 +52,22 @@ function updateConf(){
 	var i=0;
 	var text;
 	var config = new Object();
-	text=head=fs.readFileSync('/app/headfront.txt','utf8')+"\n";
+	text=fs.readFileSync('/app/head.txt','utf8')+"\n";
+	
+	for(i=1;i<=tabBackEnd.length;i++){
+		text+="\t\tBalancerMember \"http://";
+		text+=tabBackEnd[i-1]+":80\"\n"
+	}
+	
+	text+=fs.readFileSync('/app/mid.txt','utf8')+"\n";
 	
 	for(i=1;i<=tabFrontEnd.length;i++){
 		text+="\t\tBalancerMember \"http://";
 		text+=tabFrontEnd[i-1];
 		text+=":80\" route="+i+"\n"
 	}
-	text+=fs.readFileSync('/app/endfront.txt','utf8')+"\n";
-	config.num=1;
-	config.text=text;
-	var payload=JSON.stringify(config);
-	message=new Buffer(payload);
-	up.send(message,0,message.length,updateprotocol.PROTOCOL_PORT,updateprotocol.PROTOCOL_MULTICAST_ADDRESS, function(err,bytes){});
-	
-	
-	text="";
-	text=head=fs.readFileSync('/app/headback.txt','utf8')+"\n";
-	for(i=1;i<=tabBackEnd.length;i++){
-		text+="\t\tBalancerMember \"http://";
-		text+=tabFrontEnd[i-1]+":80\" route="+i+"\n"
-	}
-	text+=fs.readFileSync('/app/endback.txt','utf8');
-	tabFrontEnd=[];
-	tabBackEnd=[];
-	console.log(text);
-	config.num=2;
-	config.text=text;
-	payload=JSON.stringify(config);
-	message=new Buffer(payload);
+	text+=fs.readFileSync('/app/end.txt','utf8')+"\n";;
+	message=new Buffer(text);
 	up.send(message,0,message.length,updateprotocol.PROTOCOL_PORT,updateprotocol.PROTOCOL_MULTICAST_ADDRESS, function(err,bytes){});
 	}
 	setInterval(that.update,20000);
