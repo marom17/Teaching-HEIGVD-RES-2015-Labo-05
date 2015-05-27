@@ -9,7 +9,7 @@
 echo "L'heure vous est presente par <b>";
 echo $_SERVER['SERVER_ADDR'];
 echo "</b>: ";
-echo date("H:i");
+echo date("H:i:s");
 ?>
 
 </body>

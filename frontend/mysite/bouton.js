@@ -32,8 +32,8 @@ function handleAJAXReturn()
 			
         }
 		else{
-			document.getElementById('div1').innerHTML="Problème serveur";
+			document.getElementById('div1').innerHTML="Probleme serveur";
 		}
-		document.getElementById('bt1').innerHTML="Get External Content";
+		document.getElementById('bt1').innerHTML="Avoir l'heure";
     }
 }

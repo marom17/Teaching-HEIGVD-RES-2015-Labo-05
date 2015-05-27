@@ -6,10 +6,11 @@
 
 </head>
 <body>
-
-<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
-
-<button onclick="onClick();" id="bt1">Get External Content</button>
+<h2>Quelle heure est-il?</h2>
+<div id="div1"></div>
+<p>
+<button onclick="onClick();" id="bt1">Avoir l'heure</button>
+</p>
 <br/>
 <p>Ce service vous est fourni par <b>
 <?php
