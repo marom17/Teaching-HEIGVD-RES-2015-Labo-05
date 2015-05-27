@@ -1,28 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("button").click(function(){
-        $.ajax({url: "demo_test.txt", success: function(result){
-            $("#div1").html(result);
-        }});
-    });
-});
-</script>
+
 </head>
 <body>
 
-<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
-
-<button>Get External Content</button>
-<br/>
-<p>Ce service vous est fourni par <b>
 <?php
+echo "L'heure vous est presente par <b>";
 echo $_SERVER['SERVER_ADDR'];
+echo "</b>: ";
+echo date("H:i");
 ?>
-</b></p>
 
 </body>
 </html>

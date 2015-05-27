@@ -2,9 +2,9 @@
 		ProxySet stickysession=ROUTEID
 	</Proxy> 
 	
-	ProxyPass /api/ balancer://backend
-	ProxyPassReverse /api/ balancer://backend
-	ProxyPass / balancer://frontend
-	ProxyPassReverse / balancer://frontend
+	ProxyPass /api/ balancer://backend/
+	ProxyPassReverse /api/ balancer://backend/
+	ProxyPass / balancer://frontend/
+	ProxyPassReverse / balancer://frontend/
 
 </VirtualHost>

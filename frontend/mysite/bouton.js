@@ -2,7 +2,6 @@ var http;
 
 function createRequestObject()
 {
-    var http;
     if(window.XMLHttpRequest)
     { // Mozilla, Safari, ...
         http = new XMLHttpRequest();
@@ -15,12 +14,11 @@ function createRequestObject()
 }
 
 function onClick(){
-alert("Message");
 document.getElementById('bt1').innerHTML="Chargement";
-http.open('get', 'http://192.168.42.42/api', true);
+createRequestObject();
+http.open('get', 'http://192.168.42.42/api/', true);
 http.onreadystatechange = handleAJAXReturn;
 http.send(null);
-alert("fin");
 
 }
 
@@ -31,9 +29,11 @@ function handleAJAXReturn()
         if(http.status == 200)
         {
             document.getElementById('div1').innerHTML=http.responseText;
+			
         }
 		else{
 			document.getElementById('div1').innerHTML="Problème serveur";
 		}
+		document.getElementById('bt1').innerHTML="Get External Content";
     }
 }
