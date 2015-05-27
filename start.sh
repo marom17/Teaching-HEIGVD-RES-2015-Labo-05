@@ -1,5 +1,6 @@
 #!/bin/bash
-#Démarage du loadbalancer
+#Démarage des système principaux
 docker start dockerui
 docker start loadbalancer
+docker start control
 
