@@ -1,5 +1,0 @@
-		ProxySet lbmethod=byrequests
-	</Proxy>
-	ProxyPass "/api" "balancer://backend"
-	ProxyPassReverse "/api" "balancer://backend"
-</VirtualHost>

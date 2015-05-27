@@ -70,7 +70,7 @@ function updateConf(){
 	message=new Buffer(text);
 	up.send(message,0,message.length,updateprotocol.PROTOCOL_PORT,updateprotocol.PROTOCOL_MULTICAST_ADDRESS, function(err,bytes){});
 	}
-	setInterval(that.update,20000);
+	setInterval(that.update,10000);
 }
 
 var init=new updateConf();

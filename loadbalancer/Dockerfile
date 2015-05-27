@@ -13,4 +13,4 @@ COPY ./app /app
 COPY ./apache.sh /app/apache.sh
 RUN chmod 777 /app/start.sh
 RUN chmod 777 /app/apache.sh
-#ENTRYPOINT /app/start.sh
+ENTRYPOINT /app/start.sh
