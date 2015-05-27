@@ -69,6 +69,8 @@ function updateConf(){
 	text+=fs.readFileSync('/app/end.txt','utf8')+"\n";;
 	message=new Buffer(text);
 	up.send(message,0,message.length,updateprotocol.PROTOCOL_PORT,updateprotocol.PROTOCOL_MULTICAST_ADDRESS, function(err,bytes){});
+	tabFrontEnd=[];
+	tabBackEnd=[];
 	}
 	setInterval(that.update,10000);
 }
