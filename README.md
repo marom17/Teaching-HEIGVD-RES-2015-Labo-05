@@ -1,5 +1,24 @@
 # RES: Web Infrastructure Lab
 
+### Membres du groupes
+Samira Kouchali
+Romain Maillard
+Raphaël Mas
+Bastien Rouiller
+
+### Contribution
+####Samira Kouchali et Bastien Rouiller
+Mise en place du frontend avec étude sur le fonctionnement des requêtes Ajax et 
+communication avec le backend
+
+####Raphaël Mas
+Recherche sur le protocol de discovery par UDP et stratégie d'implémentation
+
+####Romain Maillard
+Mise en place du loadbalancer, écriture du programme hearthbeat et du controler, mise en 
+place des scripts de déarrage des container et conception du backend
+
+
 ### Objectives
 
 The main goal of this lab is to learn **how to setup a web infrastructure** and to become familiar with the role of several components (http servers, reverse proxies, load balancers). 
