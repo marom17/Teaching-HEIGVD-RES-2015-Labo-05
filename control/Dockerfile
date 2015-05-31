@@ -1,6 +1,5 @@
 FROM debian:stable
 RUN apt-get update
-#RUN apt-get install vim -y
 RUN apt-get --purge remove node  -y
 RUN apt-get install nodejs -y
 RUN ln -s /usr/bin/nodejs /usr/bin/node

@@ -6,7 +6,6 @@ RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN apt-get update --fix-missing
 RUN apt-get install npm -y
 RUN npm install -g pm2@0.12.9
-RUN apt-get install nano -y
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 COPY ./balancer.conf /usr/local/apache2/conf/extra/balancer.conf
 COPY ./app /app
