@@ -1,9 +1,14 @@
 # RES: Web Infrastructure Lab
 
+Une marche à suivre pour les tests se prénome marcheASuivre.md
+
 ### Membres du groupes
 Samira Kouchali
+
 Romain Maillard
+
 Raphaël Mas
+
 Bastien Rouiller
 
 ### Contribution
